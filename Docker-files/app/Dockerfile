@@ -5,7 +5,7 @@ RUN cd vprofile-project && git checkout docker && mvn install
 
 
 
-FROM tomcat:89-jre11
+FROM tomcat:9-jre11
 RUN rm -f /usr/local/tomcat/webapps/*
 COPY --from=IMAGE vprofile-project/target/vprofile-v2.war /usr/local/tomcat/webapps/ROOT.war
 EXPOSE 8080
