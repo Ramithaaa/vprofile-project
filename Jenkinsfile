@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         registryCredential="dockerhub"
-        registry=huarami/vproappimg
+        registry="huarami/vproappimg"
     }
 
     stages {
@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     dockerImage=docker.build registry
-                    
+
                 }
             }
         }
