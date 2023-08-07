@@ -5,7 +5,7 @@ services:
       context: ./Docker-files/db
     image: huarami/db
     container_name: vprodb
-    env:
+    environment:
       - MYSQL_ROOT_PASSWORD=vprodbpass
     ports:
       - "3306:3306"
@@ -17,7 +17,7 @@ services:
     image: rabbitmq
     ports:
       - "15672:15672"
-    env:
+    environment:
       - RABBITMQ_DEFAULT_USER=guest
       - RABBITMQ_DEFAULT_PASS=guest 
   vproapp:
