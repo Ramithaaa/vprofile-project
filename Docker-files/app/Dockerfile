@@ -1,4 +1,4 @@
-FR0M openjdk:11 AS IMAGE
+FROM openjdk:11 AS IMAGE
 RUN apt update && apt install maven -y
 RUN git clone https://github.com/Ramithaaa/vprofile-project.git
 RUN cd vprofile-project && git checkout docker && mvn install
