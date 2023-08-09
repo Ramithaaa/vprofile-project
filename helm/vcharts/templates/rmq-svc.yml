@@ -8,5 +8,5 @@ spec:
         app: vpromq01
     ports:
     - port: 15672
-      targetport: 15672
+      targetPort: 15672
       protocol: TCP

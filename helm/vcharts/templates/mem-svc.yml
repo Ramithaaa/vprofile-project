@@ -8,5 +8,5 @@ spec:
         app: vprocache01
     ports:
     - port: 11211
-      targetport: 11211
+      targetPort: 11211
       protocol: TCP
