@@ -76,7 +76,7 @@ pipeline {
         stage('Kubernetes Deploy') {
 	  agent { label 'kube' }
             steps {
-                    sh "helm upgrade --install --force vproifle-stack helm/vprofilecharts --set appimg=${registry}:${BUILD_NUMBER} --namespace prod"
+                    sh "helm upgrade --install --force vproifle-stack helm/vcharts --set appimg=${registry}:${BUILD_NUMBER} --namespace prod"
             }
         }
 
