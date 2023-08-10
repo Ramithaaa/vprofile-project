@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: vprocache01
+    labels:
+        app: vprocache01
+spec:
+    replicas: 2
+    selector:
+        matchLabels:
+            app: vprocache01
+    template:
+        metadata:
+            labels:
+                app: vprocache01
+        spec:
+            containers:
+            - name: vpromc
+              image: memcached
+              ports:
+              - containerPort: 11211
+              

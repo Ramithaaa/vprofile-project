@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: db-deployment
+    labels:
+        app: vprodb
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: vprodb
+    template:
+        metadata:
+            labels:
+                app: vprodb
+        spec:
+            containers:
+            - name: vprodb
+              image: huarami/vprodb:v1
+              ports:
+              - containerPort: 3306
+              env:
+              - name: MYSQL_ROOT_PASSWORD
+                valueFrom:
+                    secretKeyRef:
+                    - name: secret
+                      key: dbpass
