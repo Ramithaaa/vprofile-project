@@ -22,8 +22,9 @@ spec:
               env:
               - name: RABBITMQ_DEFAULT_USER
                 value: "guest"
+
               - name: RABBITMQ_DEFAULT_PASS
                 valueFrom:
-                    secretKeyRef:
-                    - name: secret
-                      key: rmqpass
+                  secretKeyRef:
+                  - name: secret
+                    key: rmqpass
