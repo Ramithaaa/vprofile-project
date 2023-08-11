@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
     name: vpromq01
     labels:
-        app: vpromq01
+      app: vpromq01
 spec:
     replicas: 2
     selector:
