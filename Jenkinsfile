@@ -61,6 +61,14 @@ pipeline {
             }
         }
 
+
+        stage ('Deploy to Kubernetes') {
+            agent { label 'KUBE' }
+            steps {
+                sh "helm upgrade --install --force vprofile helm/vcharts --set appimg=${registry}:${BUILD_NUMBER} --namespace prod"
+            }
+        }
+
         stage ('SonarQube Analysis') {
             environment {
                 scannerHome = tool 'sonar'
