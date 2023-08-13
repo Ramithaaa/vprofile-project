@@ -23,8 +23,8 @@ spec:
             initContainers:
             - name: mydb
               image: busybox
-              command: ['sh','-c','until nslookup vprodb;do echo waiting for mydb;sleep 2;done;']
+              command: ['sh','-c','until nslookup vprodb; do echo waiting for mydb;sleep 2; done;']
 
             - name: cache
               image: busybox
-              command: ['sh','-c','until nslookup vprocache01;do echo waiting for cache;sleep 2;done;']
+              command: ['sh','-c','until nslookup vprocache01; do echo waiting for cache; sleep 2; done;']
